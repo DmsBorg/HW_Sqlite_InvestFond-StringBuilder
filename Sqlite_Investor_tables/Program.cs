@@ -1,8 +1,15 @@
-﻿using Microsoft.Data.Sqlite;
+﻿
+using Microsoft.Data.Sqlite;
 using System.IO;
-
+using System.Data.SQLite;
 string DatabaseFile = "db2.sqlite";
-string databaseConnectionString = $"Data Source={DatabaseFile}";
+
+// SQLiteConnectionStringBuilder для создания строки подключения
+var sqliteConnectionStringBuilder = new SQLiteConnectionStringBuilder
+{
+    DataSource = DatabaseFile
+};
+string databaseConnectionString = sqliteConnectionStringBuilder.ToString();
 
 if (!File.Exists(DatabaseFile))
 {
@@ -16,8 +23,7 @@ using (SqliteConnection databaseConnection = new SqliteConnection(databaseConnec
     using (var command = databaseConnection.CreateCommand())
     {
         command.CommandType = System.Data.CommandType.Text;
-
-        // Создание таблиц с уникальными ограничениями(можно добавть фамилии или по id потом...)
+        //созданиее таблиц
         command.CommandText = @"
             CREATE TABLE IF NOT EXISTS Investors (
                 ID INTEGER PRIMARY KEY, 
@@ -41,18 +47,33 @@ using (SqliteConnection databaseConnection = new SqliteConnection(databaseConnec
         ";
         command.ExecuteNonQuery();
 
-        // Вставка данных с использованием INSERT OR IGNORE
+
         command.CommandText = @"
             INSERT OR IGNORE INTO Investors (Investor_Name, Investor_Cash) VALUES 
+            ('Carol', 200000), 
+            ('Dave', 250000),
+            ('Eve', 300000),
+            ('Frank', 350000),
+            ('Grace', 400000),
             ('Alice', 100000), 
             ('Bob', 150000);
 
             INSERT OR IGNORE INTO Investments (Investor_ID, Stock_Name, Amount, Currency) VALUES 
+            (3, 'Amazon', 60, 'USD'),
+            (3, 'Tesla', 70, 'USD'),
+            (4, 'Netflix', 80, 'USD'),
+            (4, 'Adobe', 90, 'USD'),
+            (5, 'Intel', 100, 'USD'),
             (1, 'Apple', 50, 'USD'),
             (1, 'Microsoft', 30, 'USD'),
             (2, 'Google', 40, 'USD');
 
             INSERT OR IGNORE INTO Efficiency (Investment_ID, Profit_Percentage) VALUES 
+            (4, 6.3),
+            (5, 7.4),
+            (6, 8.5),
+            (7, 9.6),
+            (8, 10.7),
             (1, 5.2),
             (2, 3.8),
             (3, 4.1);
@@ -72,7 +93,6 @@ using (SqliteConnection databaseConnection = new SqliteConnection(databaseConnec
     {
         command.CommandType = System.Data.CommandType.Text;
 
-        // Чтение и вывод данных из Investors
         command.CommandText = "SELECT * FROM Investors;";
         using (var reader = command.ExecuteReader())
         {
@@ -82,7 +102,6 @@ using (SqliteConnection databaseConnection = new SqliteConnection(databaseConnec
             }
         }
 
-        // Чтение и вывод данных из Investments
         command.CommandText = "SELECT * FROM Investments;";
         using (var reader = command.ExecuteReader())
         {
@@ -92,7 +111,6 @@ using (SqliteConnection databaseConnection = new SqliteConnection(databaseConnec
             }
         }
 
-        // Чтение и вывод данных из Efficiency
         command.CommandText = "SELECT * FROM Efficiency;";
         using (var reader = command.ExecuteReader())
         {
@@ -105,3 +123,4 @@ using (SqliteConnection databaseConnection = new SqliteConnection(databaseConnec
 
     databaseConnection.Close();
 }
+
