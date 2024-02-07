@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "4QCA/PxoUvYtQPc45XqRw0i2Gk8IsTckSeFOeO2rOd0pU00yv5Uw8hJzkb6lUmoIAjKrIbS7i78LlFAswc9q8w==",
+  "dgSpecHash": "q5rWbPizPVXPriDAyApGOshMeRj/OHRufpdIDmWh9oLdiSCwfWZDPtdiWxLETVEBR7alY9CFGhw+SLSgm478FQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\user_dms\\Desktop\\Homework\\C# Visual Studio\\C# Net\\Sqlite_Investor_tables3\\Sqlite_Investor_tables\\Sqlite_Investor_tables.csproj",
+  "projectFilePath": "C:\\Users\\user_dms\\Desktop\\Homework\\C# Visual Studio\\C# DB\\Sqlite_Investor_tables(StringBuilder)\\Sqlite_Investor_tables\\Sqlite_Investor_tables.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user_dms\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\user_dms\\.nuget\\packages\\microsoft.csharp\\4.7.0\\microsoft.csharp.4.7.0.nupkg.sha512",

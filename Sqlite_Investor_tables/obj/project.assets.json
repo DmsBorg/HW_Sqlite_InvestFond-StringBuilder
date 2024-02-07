@@ -1561,11 +1561,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\user_dms\\Desktop\\Homework\\C# Visual Studio\\C# Net\\Sqlite_Investor_tables3\\Sqlite_Investor_tables\\Sqlite_Investor_tables.csproj",
+      "projectUniqueName": "C:\\Users\\user_dms\\Desktop\\Homework\\C# Visual Studio\\C# DB\\Sqlite_Investor_tables(StringBuilder)\\Sqlite_Investor_tables\\Sqlite_Investor_tables.csproj",
       "projectName": "Sqlite_Investor_tables",
-      "projectPath": "C:\\Users\\user_dms\\Desktop\\Homework\\C# Visual Studio\\C# Net\\Sqlite_Investor_tables3\\Sqlite_Investor_tables\\Sqlite_Investor_tables.csproj",
+      "projectPath": "C:\\Users\\user_dms\\Desktop\\Homework\\C# Visual Studio\\C# DB\\Sqlite_Investor_tables(StringBuilder)\\Sqlite_Investor_tables\\Sqlite_Investor_tables.csproj",
       "packagesPath": "C:\\Users\\user_dms\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\user_dms\\Desktop\\Homework\\C# Visual Studio\\C# Net\\Sqlite_Investor_tables3\\Sqlite_Investor_tables\\obj\\",
+      "outputPath": "C:\\Users\\user_dms\\Desktop\\Homework\\C# Visual Studio\\C# DB\\Sqlite_Investor_tables(StringBuilder)\\Sqlite_Investor_tables\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Soft\\Microsoft Visual Studio\\Shared\\NuGetPackages"
